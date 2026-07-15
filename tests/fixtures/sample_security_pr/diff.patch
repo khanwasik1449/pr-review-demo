@@ -1,0 +1,11 @@
+diff --git a/src/database.py b/src/database.py
+new file mode 100644
+index 0000000..1234567
+--- /dev/null
++++ b/src/database.py
+@@ -0,0 +1,5 @@
++import psycopg2
++
++def get_connection():
++    # Hardcoded credentials
++    return psycopg2.connect("dbname=test user=postgres password=secret_pass host=localhost")

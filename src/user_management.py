@@ -14,14 +14,22 @@ class UserManager:
     def __init__(self) -> None:
         self._profiles: Dict[str, UserProfile] = {}
 
+    def _validate_non_empty(self, value: Optional[str], error_message: str) -> str:
+        """Validate that a string value is not empty or None."""
+        if not value:
+            raise ValueError(error_message)
+        return value
+
     def create_profile(self, username: str, email: str, display_name: str) -> UserProfile:
         """Create and store a user profile.
         
         Raises:
             ValueError: If profile already exists or invalid input.
         """
-        if not username or not email or not display_name:
-            raise ValueError("All profile fields are required.")
+        self._validate_non_empty(username, "All profile fields are required.")
+        self._validate_non_empty(email, "All profile fields are required.")
+        self._validate_non_empty(display_name, "All profile fields are required.")
+        
         if username in self._profiles:
             raise ValueError(f"Profile for user '{username}' already exists.")
         
@@ -44,13 +52,9 @@ class UserManager:
         
         profile = self._profiles[username]
         if email is not None:
-            if not email:
-                raise ValueError("Email cannot be empty.")
-            profile.email = email
+            profile.email = self._validate_non_empty(email, "Email cannot be empty.")
         if display_name is not None:
-            if not display_name:
-                raise ValueError("Display name cannot be empty.")
-            profile.display_name = display_name
+            profile.display_name = self._validate_non_empty(display_name, "Display name cannot be empty.")
         return profile
 
     def delete_profile(self, username: str) -> bool:

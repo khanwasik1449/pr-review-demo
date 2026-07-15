@@ -1,0 +1,10 @@
+{
+  "pr_title": "Add database connection module",
+  "pr_description": "Initial setup for PostgreSQL connection.",
+  "changed_files": [
+    {
+      "file": "src/database.py",
+      "type": "Source"
+    }
+  ]
+}

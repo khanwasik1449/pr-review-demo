@@ -1,0 +1,10 @@
+{
+  "pr_title": "Update README structure",
+  "pr_description": "Clarifying configuration requirements.",
+  "changed_files": [
+    {
+      "file": "README.md",
+      "type": "Docs"
+    }
+  ]
+}
