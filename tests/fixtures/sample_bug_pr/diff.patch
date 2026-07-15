@@ -1,0 +1,10 @@
+diff --git a/src/calculator.py b/src/calculator.py
+index 1234567..89abcde 100644
+--- a/src/calculator.py
++++ b/src/calculator.py
+@@ -21,3 +21,3 @@ class Calculator:
+         if b == 0:
+-            raise ValueError("Cannot divide by zero.")
++            # Bug: forgot to raise error, just returning None
++            pass
+         return a / b

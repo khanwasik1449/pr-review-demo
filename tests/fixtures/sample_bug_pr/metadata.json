@@ -1,0 +1,14 @@
+{
+  "pr_title": "Fix division by zero and profile update validation",
+  "pr_description": "This PR fixes division by zero in calculator and adds validation in user profiles.",
+  "changed_files": [
+    {
+      "file": "src/calculator.py",
+      "type": "Source"
+    },
+    {
+      "file": "src/user_management.py",
+      "type": "Source"
+    }
+  ]
+}
